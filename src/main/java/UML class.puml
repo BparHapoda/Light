@@ -1,0 +1,18 @@
+@startuml
+
+class ChinaBattery {}
+class DurasellBattery{}
+class Battery{
+int charge
+boolean charge()
+
+}
+class Light{
+ Battery battery
+    boolean light
+    }
+
+ChinaBattery <|--Battery
+DurasellBattery <|--Battery
+Light *-- Battery
+@enduml
