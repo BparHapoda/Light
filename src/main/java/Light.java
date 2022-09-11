@@ -7,11 +7,13 @@ public class Light {
     }
 
     public void on() {
+        System.out.println("Фонарик включен");
         light = battery.charge();
     }
 
 
     public void off() {
+        System.out.println("Фонарик выключен");
         light = false;
     }
 
@@ -19,4 +21,7 @@ public class Light {
         return light;
     }
 
+    public Battery getBattery() {
+        return battery;
+    }
 }

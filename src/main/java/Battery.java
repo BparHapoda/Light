@@ -6,8 +6,15 @@ public abstract class Battery {
         this.charge = charge;
     }
 
-    public boolean charge (){
+    public boolean charge() {
         charge--;
+        if (charge <= 0) {
+            System.out.println("Батарейка разряжена");
+        }
         return charge > 0;
+    }
+
+    public int getCharge() {
+        return charge;
     }
 }

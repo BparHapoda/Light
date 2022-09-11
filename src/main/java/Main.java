@@ -52,7 +52,19 @@ private ChinaBattery battery = new ChinaBattery();
  */
 
 public class Main {
-    public static void main (String[] args){
+    public static void main(String[] args) {
+        Light light = new Light(new ChinaBattery());
+        while (true) {
+            light.on();
+            if (light.isLight()) {
+                System.out.println("Фонарик горит (осталось " + light.getBattery().getCharge() + " единиц заряда)");
+            }
+            if (light.getBattery().getCharge() == 0) {
+                System.out.println("Фонарик разрядился");
+                break;
+            }
+            light.off();
+        }
 
     }
 }

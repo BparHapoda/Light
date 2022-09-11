@@ -5,19 +5,21 @@ import org.junit.jupiter.api.Test;
 class LightTest {
 
     @Test
-    public void isLightForNewLightShouldBeFalse(){
+    public void isLightForNewLightShouldBeFalse() {
         Light light = new Light(new ChinaBattery());
         Assertions.assertFalse(light.isLight());
     }
+
     @Test
-    public void isLightLaterOnShouldBeTrue(){
+    public void isLightLaterOnShouldBeTrue() {
         Light light = new Light(new ChinaBattery());
 
         light.on();
         Assertions.assertTrue(light.isLight());
     }
+
     @Test
-    public void isLightLaterOffShouldBeFalse(){
+    public void isLightLaterOffShouldBeFalse() {
         Light light = new Light(new ChinaBattery());
 
         light.off();
@@ -25,11 +27,12 @@ class LightTest {
     }
 
     @Test
-    public void LightShouldBeOffAfterFifthOn(){
+    public void LightShouldBeOffAfterFifthOn() {
         Light light = new Light(new ChinaBattery());
 
-        light.on();
-        light.on();light.on();light.on();light.on();light.on();
+        for (int i = 0; i < 6; i++) {
+            light.on();
+        }
 
         Assertions.assertFalse(light.isLight());
     }

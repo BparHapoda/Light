@@ -1,5 +1,5 @@
-public class ChinaBattery extends Battery{
-    public ChinaBattery (){
+public class ChinaBattery extends Battery {
+    public ChinaBattery() {
         setCharge(5);
     }
 }
